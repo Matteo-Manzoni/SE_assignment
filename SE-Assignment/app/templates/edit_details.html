@@ -1,0 +1,95 @@
+{% extends "home.html" %}
+{% block content %}
+
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center" style="max-width:100%">
+            <div class="col-md-8 my-5">
+                <div class="card">
+                    <div class="card-header">{{Register}}</div>
+                    <div class="card-body">
+                        <form action="" method="post" novalidate>
+                            {{ form.hidden_tag() }}
+                            <div class="form-group row">
+                                    {{ form.user_email.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.user_email(size=1, class_="form-control  ", type="small", id="user_email", disabled=True) }}<br>
+                                {% for error in form.user_email.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                    {{ form.user_new_email.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.user_new_email(size=32, class_="form-control  ", type="small") }}<br>
+                                {% for error in form.user_email.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                    {{ form.user_name.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.user_name(size=32, class_="form-control ", type="small", id="user_name", disabled=True) }}<br>
+                                {% for error in form.user_name.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
+                            <div class="form-group row">
+                                    {{ form.user_new_name.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.user_new_name(size=32, class_="form-control  ", type="small") }}<br>
+                                {% for error in form.user_new_name.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <p>
+                                    {{ form.user_date_of_birth.label(class_='col-md-12 input-margin-right
+                                    row-form-label text-md-left') }}<br>
+                                <div class="col-md-6 input-margin-left">
+                                {{ form.user_date_of_birth(size=32, class_="form-control datepicker", type='date', id="select_dob") }}<br>
+                                {% for error in form.user_date_of_birth.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                                </p>
+                            </div>
+
+                            </div>
+                            <div class="col-sm-10 offset-md-4">
+                                <p>{{ form.submit(class_='btn btn-primary') }}</p>
+                            </div>
+                    </form>
+                        <script>
+                            let name_select = document.getElementById('user_name');
+                            let email_select = document.getElementById('user_email');
+                            let date_of_birth_select = document.getElementById('select_dob');
+
+                            email_select.onchange = function() {
+
+                                email = email_select.value;
+
+                                fetch('/user_details/' + email).then(function(response) {
+
+                                    response.json().then(function(data) {
+                                        name_select.value = data.user_name;
+                                        email_select.value = data.user_email;
+                                        date_of_birth_select.value = data.user_date_of_birth;
+                                    });
+                                });
+                            };
+
+                        </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+
+{% endblock %}

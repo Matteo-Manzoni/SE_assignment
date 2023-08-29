@@ -1,0 +1,120 @@
+.context-dark, .bg-gray-dark, .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+}
+.hidden{
+    visibility:hidden;
+    display:none !important;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}
+
+.input-margin-left{
+    margin-left: 3.5rem !important;
+}
+
+.dashboard-margin-left{
+    margin-left: 4.5rem !important;
+}
+.var-entry-margin-left{
+    margin-left: 2rem !important;
+}
+.button-margin-left{
+    margin-left: 2.3rem !important;
+}
+.other-button-margin{
+    margin-left:14.4rem !important;
+}
+.input-margin-right{
+    margin-right: 2rem;
+}
+.bk .button-css{
+    margin-top:20px;
+    max-width:160px;
+}
+.bk .entry_css{
+    max-width:45%;
+}
+
+.bk .plot_css{
+    max-width:50%;
+    max-height:25%;
+}
+
+.margin-top-col2{
+    margin-top: 4rem !important;
+}
+.bk .container-bk{
+    max-height:90%%;
+    max-width:100%;
+}
+
+.col-container-bk{
+    max-width:50%;
+    max-height:100%;
+}
+
+.bk-container{
+    align:middle;
+    max-height:80%;
+}
+.input-margin{
+    margin-left:2.5rem !important;
+}
+
+.btn-primary{
+    background-color:#622bcc !important;
+}
+
+.card-header, .card-body {
+    color: white !important;
+}
+
+.card {
+    background-color:#401c85 !important;
+}
+
+.table {
+    color: white !important;
+}
+
+.td-width {
+    width:25%;
+}

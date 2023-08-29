@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center" style="max-width:100%">
+            <div class="col-md-8 my-5">
+                <div class="card">
+                    <div class="card-header">Meal plan Generator</div>
+                    <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm">
+                        <a href="{{ url_for('update_details') }}" class="btn btn-primary btn-lg btn-lg btn-block active mx-auto my-auto" role="button" aria-pressed="true">Personal details <br>View/edit your own personal details </a>
+                      </div>
+                      <div class="col-sm">
+                        <a href="{{ url_for('meal_browser') }}" class="btn btn-primary btn-lg btn-block btn-lg active mx-auto my-auto" role="button" aria-pressed="true">Browse meals <br> Browse through all the meals available</a>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-sm">
+                        <a href="{{ url_for('preferences') }}" class="btn btn-primary btn-lg btn-block btn-lg active mx-auto my-auto" role="button" aria-pressed="true">Edit meal plan preferences <br>Create a new meal plan based on survey</a>
+                      </div>
+                      <div class="col-sm mx-auto my-auto">
+                        <a href="{{ url_for('meal_planner') }}" class="btn btn-primary btn-lg btn-block btn-lg active " role="button" aria-pressed="true">View meal plan<br> Look at your own personalised meal plan</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
